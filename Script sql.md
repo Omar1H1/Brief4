@@ -33,6 +33,7 @@
 CREATE TABLE Posts (
 id SERIAL PRIMARY KEY,
 author_id INT REFERENCES Users(id),
+parent_id INT REFERENCES Posts(id),
 post_date timestamp,
 content TEXT,
 image VARCHAR(50),
@@ -42,19 +43,6 @@ comments INT,
 shares INT
 );
 ```
-
-### Create Comments Table :
- ```sql
- CREATE TABLE Comments (
- id SERIAL PRIMARY KEY,
- post_id INT REFERENCES Posts(id),
- author_id INT REFERENCES Users(id),
- comment_date timestamp,
- content TEXT,
- likes INT
- );
-```
-
 ### Create Follows Table:
 
 ```sql

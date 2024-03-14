@@ -38,26 +38,23 @@ INSERT INTO Comments (post_id, author_id, content, comment_date) VALUES (1, 1, '
 ### Show post:
 
 ```sql
-CREATE VIEW PostDetails AS
-SELECT
-    p.id AS post_id,
-    p.content AS post_content,
-    p.image AS post_image,
-    p.document AS post_document,
-    p.likes AS post_likes,
-    p.comments AS post_comments,
-    c.id AS comment_id,
-    c.content AS comment_content,
-    c.likes AS comment_likes,
-    u.id AS user_id,
-    u.first_name AS user_first_name,
-    u.last_name AS user_last_name
-FROM
-    Posts p
-JOIN
-    Comments c ON p.id = c.post_id
-JOIN
-    Users u ON p.author_id = u.id;
+CREATE VIEW PostDetails
+AS SELECT p.id 
+AS post_id, p.content 
+AS post_content, p.image 
+AS post_image, p.document 
+AS post_document, p.likes 
+AS post_likes, p.comments 
+AS post_comments, c.id 
+AS comment_id, c.content 
+AS comment_content, c.likes 
+AS comment_likes, u.id 
+AS user_id, u.first_name 
+AS user_first_name, u.last_name 
+AS user_last_name 
+FROM Posts p LEFT 
+JOIN Comments c ON p.id = c.post_id 
+JOIN Users u ON p.author_id = u.id;
 ```
 
 ```sql

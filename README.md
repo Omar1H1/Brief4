@@ -87,6 +87,7 @@ i need to create a comment table with comment id (numeric), author, date, conten
     - `id` (numeric, primary key, unique identifier for the post)
     - `author` (varchar, foreign key referencing the User table first_name)
     - `author_id` (numeric, foreign key referencing the User table)
+    - `parent_id` (numeric, foreign key referencing this same table)
     - `date` (timestamp, Date of Publication)
     - `content` (text, Text Content of the Post)
     - `image` (varchar, optional URL if found)
@@ -94,16 +95,6 @@ i need to create a comment table with comment id (numeric), author, date, conten
     - `likes` (numeric)
     - `comments` (numeric)
     - `shares` (numeric)
-
-### Comment Table:
-
-- **Columns:**
-    - `id` (numeric, primary key, unique identifier for the comment)
-    - `post_id` (numeric, foreign key referencing the Post table)
-    - `author_id` (numeric, foreign key referencing the User table)
-    - `comment_date` (timestamp)
-    - `content` (text, text of the comment)
-    - `likes` (numeric)
 
 ### Follows Table:
 
