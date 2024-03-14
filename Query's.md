@@ -70,7 +70,7 @@ SELECT id AS post_id, likes AS total_likes
 FROM Posts
 WHERE post_date >= CURRENT_TIMESTAMP - INTERVAL '24 hours'
 ORDER BY likes DESC
-LIMIT 10;
+LIMIT 10 OFFSET 0;
 
 ```
 
@@ -80,7 +80,7 @@ LIMIT 10;
 SELECT *
 FROM Posts
 ORDER BY post_date DESC
-LIMIT 10;
+LIMIT 10 OFFSET 0;
 ```
 
 ### Search for User:
