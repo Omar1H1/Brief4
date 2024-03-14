@@ -63,6 +63,26 @@ FROM PostDetails
 WHERE post_id = 1;
 ```
 
+### Show popular posts in the last 24h :
+
+```sql
+SELECT id AS post_id, likes AS total_likes
+FROM Posts
+WHERE post_date >= CURRENT_TIMESTAMP - INTERVAL '24 hours'
+ORDER BY likes DESC
+LIMIT 10;
+
+```
+
+### Show recent posts:
+
+```sql
+SELECT *
+FROM Posts
+ORDER BY post_date DESC
+LIMIT 10;
+```
+
 ### Search for User:
 
 ```sql
