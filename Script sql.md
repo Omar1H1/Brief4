@@ -34,6 +34,7 @@ CREATE TABLE Posts (
 id SERIAL PRIMARY KEY,
 author_id INT REFERENCES Users(id),
 parent_id INT REFERENCES Posts(id),
+gorup_id INT REFERENCES Groups(id),
 post_date timestamp,
 content TEXT,
 image VARCHAR(50),
